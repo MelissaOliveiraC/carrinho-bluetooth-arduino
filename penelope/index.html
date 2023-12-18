@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interface do Arduino</title>
+</head>
+<body>
+  <h1>Dados do Arduino:</h1>
+  <div id="dadosArduino"></div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+
+    socket.on('dadosArduino', (data) => {
+      document.getElementById('dadosArduino').innerHTML = data;
+      // Adicione mais lógica de atualização da interface conforme necessário
+    });
+  </script>
+</body>
+</html>
